@@ -1,17 +1,24 @@
 import './App.css';
-import Row from './componentes/Row'
-import {categories} from './api'
+import Row from "./componentes/Row"
+import { categories } from './api';
 
 function App() {
 
+
   return (
     <div className="App">
-      {/*navbar*/}
-      {/*destaque*/}
-      {/*em alta*/}
-      {categories.map((category)=>{
-        return<Row key={category.name} title={category.title} path={category.path}/>
-      })}
+      {/* Navbar */}
+      {/* destaque */}
+      {/* Em alta */}
+      {categories.map( (category) => {
+        return <Row 
+                  key={category.name} 
+                  title={category.title} 
+                  path={category.path}
+                  isLarge={category.isLarge}
+                 />
+      } )}
+
     </div>
   );
 }
